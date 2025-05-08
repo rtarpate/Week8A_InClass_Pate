@@ -20,6 +20,9 @@ function timer(min, sec)
       timer.timeID = null;
 }
 
+/*
+console.log("step 3 good");
+*/
 
 //step 4
 timer.prototype.runPause(timer, minBox, secBox) 
@@ -51,14 +54,23 @@ function countdown()
             timer.minutes = timer.minutes - 1;
 
             timer.seconds = 59;
+
+           // console.log("if else statment");
       }
       else
       {
             window.clearInterval(timer.timeID,);
       }
 
+      //console.log("after if else")
+
+      minBox.value = timer.minutes;
+      secBox.value = timer.seconds;
+
+      /*
       timer.minutes = minBox.value;
       timer.seconds = secBox.value;
+      */
 }
 
 
@@ -78,5 +90,12 @@ document.getElementById("minutesBox").onchange = (myTimer.minutes = minBox.value
 
 document.getElementById("secondsBox").onchange = (myTimer.seconds = secBox.value);
 
+
+
+
 //step 9
+/*
 document.getElementById("runPauseButton").onclick = runPause(myTimer, minBox, secBox);
+*/
+
+runPauseButton.addEventListner("click", runPause(myTimer, minBox, secBox));
